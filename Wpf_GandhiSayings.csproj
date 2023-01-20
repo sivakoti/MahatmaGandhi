@@ -1,0 +1,91 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="charkha.png" />
+    <None Remove="GandhiImages\1.png" />
+    <None Remove="GandhiImages\10.png" />
+    <None Remove="GandhiImages\11.png" />
+    <None Remove="GandhiImages\12.png" />
+    <None Remove="GandhiImages\13.png" />
+    <None Remove="GandhiImages\14.png" />
+    <None Remove="GandhiImages\16.png" />
+    <None Remove="GandhiImages\17.png" />
+    <None Remove="GandhiImages\18.png" />
+    <None Remove="GandhiImages\19.png" />
+    <None Remove="GandhiImages\2.png" />
+    <None Remove="GandhiImages\20.png" />
+    <None Remove="GandhiImages\21.png" />
+    <None Remove="GandhiImages\22.png" />
+    <None Remove="GandhiImages\23.png" />
+    <None Remove="GandhiImages\24.png" />
+    <None Remove="GandhiImages\25.png" />
+    <None Remove="GandhiImages\3.png" />
+    <None Remove="GandhiImages\4.png" />
+    <None Remove="GandhiImages\5.png" />
+    <None Remove="GandhiImages\6.png" />
+    <None Remove="GandhiImages\7.png" />
+    <None Remove="GandhiImages\8.png" />
+    <None Remove="GandhiImages\9.png" />
+    <None Remove="GnadhiInGujarat.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="GnadhiInGujarat.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="charkha.png" />
+    <Resource Include="GandhiImages\7.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="GandhiImages\1.png" />
+    <Resource Include="GandhiImages\10.png" />
+    <Resource Include="GandhiImages\11.png" />
+    <Resource Include="GandhiImages\12.png" />
+    <Resource Include="GandhiImages\13.png" />
+    <Resource Include="GandhiImages\14.png" />
+    <Resource Include="GandhiImages\16.png" />
+    <Resource Include="GandhiImages\17.png" />
+    <Resource Include="GandhiImages\18.png" />
+    <Resource Include="GandhiImages\19.png" />
+    <Resource Include="GandhiImages\2.png" />
+    <Resource Include="GandhiImages\20.png" />
+    <Resource Include="GandhiImages\21.png" />
+    <Resource Include="GandhiImages\22.png" />
+    <Resource Include="GandhiImages\23.png" />
+    <Resource Include="GandhiImages\24.png" />
+    <Resource Include="GandhiImages\25.png" />
+    <Resource Include="GandhiImages\3.png" />
+    <Resource Include="GandhiImages\4.png" />
+    <Resource Include="GandhiImages\5.png" />
+    <Resource Include="GandhiImages\6.png" />
+    <Resource Include="GandhiImages\8.png" />
+    <Resource Include="GandhiImages\9.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

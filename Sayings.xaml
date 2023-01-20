@@ -1,0 +1,67 @@
+﻿<Window x:Class="Wpf_GandhiSayings.Sayings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_GandhiSayings"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed"
+        Title="Mahatma Gandhi" Height="450" Width="850" AutomationProperties.Name="Sayings" SizeToContent="Manual" WindowStartupLocation="Manual">
+
+    <Grid Background="FloralWhite">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="246"/>
+            <ColumnDefinition Width="430"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--title-->
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Orientation="Horizontal" Background="BlanchedAlmond">
+            <TextBlock Text="Mahatma Gandhi Sayings" FontSize="16" FontWeight="Bold" Foreground="Black" Margin="10"/>
+        </StackPanel>
+
+        <!--left stackpanel for categories-->
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="23,5,23,0" Orientation="Vertical" Height="379" VerticalAlignment="Top">
+            <TextBlock Text="click on text to see the sayings" FontSize="11" Foreground="BlueViolet" Margin="0,5,0,0"/>
+            <ListBox Name="LBx_Categories" Padding="5,5,5,5" Width="200" HorizontalAlignment="Left" Height="310" SelectionChanged="LBx_Categories_SelectionChanged" FontSize="16" Margin="0,2,0,0" Background="Bisque">
+            </ListBox >
+            <Button Content="Add New Saying" Background="LightSeaGreen" Name="Btn_AddSaying" Click="Btn_AddSaying_Click" Width="200" Height="20" Margin="0,5,0,0" ToolTip="click this button to add new saying"/>
+        </StackPanel>
+
+        <!--listbox to display sayings-->
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Height="394" VerticalAlignment="Bottom">
+            <TextBlock Text="Enter text to filter" FontSize="10" Margin="5,33,0,0" Foreground="BlueViolet"/>
+            <TextBox Name="TBx_filter" TextChanged="TBx_filter_TextChanged" Width="200" Height="20" Margin="5,2,0,0" HorizontalAlignment="Left" ToolTip="Enter text to filter"/>
+            <ListBox Name="LBx_Sayings" Width="420" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Margin="0,6,0,10" Grid.ColumnSpan="2" Height="310">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel ItemWidth="200" ItemHeight="150" Margin="0,10,15,0" HorizontalAlignment="Left" Width="500" VerticalAlignment="Top"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="10" Background="BlanchedAlmond">
+                            <TextBlock TextWrapping="Wrap" Margin="10">
+                                <Run FontWeight="Bold" Text="{Binding Saying}"/>
+                            </TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+
+        <!--stackpanel to add new sayings by user-->
+        <StackPanel Name="Stk_sayings" Grid.Row="1" Grid.Column="2" Orientation="Vertical" Visibility="Hidden" >
+            <TextBlock Text="Add new saying" TextWrapping="Wrap" Padding="5,10,0,5" FontSize="14"/>
+            <TextBox Name="Tbx_addSaying" Text="{Binding Sayings}" Width="150" Height="100" Margin="0,0,0,0" ToolTip="write new saying here"/>
+            <Button Content="Add" Width="150" Name="Btn_useradd" Background="LightSeaGreen" Click="Btn_useradd_Click"/>
+            <TextBlock Text="click this button to add" Margin="25,0,0,0" FontSize="10" Foreground="BlueViolet" ToolTip="click this button to add" />
+        </StackPanel>
+
+    </Grid>
+</Window>
